@@ -13,6 +13,9 @@ else if(env.BRANCH_NAME ==~ "master"){
     environment = "prod"
 }
 node {
+    stage("Clean Workspace"){
+            cleanWs()
+        }
     stage('Pull Repo') {
         git url: 'https://github.com/ikambarov/packer.git'
     }
